@@ -1,7 +1,7 @@
 # Bind module for Puppet
 
 [![Puppet Forge](http://img.shields.io/puppetforge/v/panaceya/bind.svg)](https://forge.puppetlabs.com/panaceya/bind)
-[![Build Status](https://travis-ci.org/panaceya/puppet-bind.png?branch=master)](https://travis-ci.org/camptocamp/puppet-bind)
+[![Build Status](https://travis-ci.org/panaceya/puppet-bind.png?branch=master)](https://travis-ci.org/panaceya/puppet-bind)
 
 **Manages bind configuration under Debian / Ubuntu and CentOS.**
 
