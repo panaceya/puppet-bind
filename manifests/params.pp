@@ -37,11 +37,11 @@ class bind::params {
         $dynamic_directory    = '/etc/named/dynamic'
 
                 if ( $::operatingsystem == 'centos' ) and ( versioncmp($::operatingsystemrelease, 7) > 0 ) {
-	                $service_restart       = '/usr/bin/systemctl reload named'
-	        }
-	        else
+                        $service_restart = '/usr/bin/systemctl reload named'
+                }
+                else
                 {
-                        $service_restart      = '/etc/init.d/named reload'
+                        $service_restart = '/etc/init.d/named reload'
                 }
     }
     else {
