@@ -28,7 +28,6 @@ class bind::params {
         $bind_group           = 'named'
         $service_has_status   = true
         $service_pattern      = undef
-        $service_restart      = '/etc/init.d/named reload'
         $config_base_dir      = '/etc'
         $named_conf_name      = 'named.conf'
         $named_local_name     = 'named.conf.local'
@@ -36,6 +35,14 @@ class bind::params {
         $pri_directory        = '/etc/named/pri'
         $keys_directory       = '/etc/named/keys'
         $dynamic_directory    = '/etc/named/dynamic'
+
+	    if ( $::operatingsystem == 'centos' ) and ( versioncmp($::operatingsystemrelease, 7) > 0 ) {
+		    $service_restart       = '/usr/bin/systemctl reload named'
+	    }
+	    else
+	    {
+		    $service_restart      = '/etc/init.d/named reload'
+	    }
     }
     else {
         fail "Unknown ${::operatingsystem}"
